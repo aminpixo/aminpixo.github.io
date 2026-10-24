@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amin pixo social</title>
+    <link rel="icon" type="image/png" href="./avatara.png">
+    
+    <!-- 🔥 Font Awesome برای آیکون‌ها -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+        }
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(
+        270deg,
+        #ff7777,    /* قرمز */
+        #ffbc78,    /* نارنجی */
+        #ffff7a,    /* زرد */
+        #7cff7c,    /* سبز */
+        #7bfdfd,    /* فیروزه‌ای */
+        #7b7bff,    /* آبی */
+        #c47bff,    /* بنفش */
+        #ff78ff,    /* صورتی */
+        #ff7b7b     /* برگشت به قرمز */
+    );
+    background-size: 800% 800%;
+    animation: rgbBackground 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+}
+
+@keyframes rgbBackground {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .container {
+            background: rgba(255, 246, 246, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 40px 30px;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeIn 0.8s ease-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 10px 30px rgba(118, 75, 162, 0.4);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.05) rotate(3deg);
+        }
+
+        h1 {
+            color: #2d3748;
+            font-size: 26px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .username {
+            color: #764ba2;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .description {
+            color: #4a5568;
+            font-size: 14px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* دکمه‌های ساده */
+        .social-btn {
+            display: grid;
+            grid-template-columns: 40px 1fr;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .social-btn:hover::before {
+            left: 100%;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .social-btn img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            justify-self: center;
+        }
+
+        .social-btn span {
+            text-align: right;
+            direction: rtl;
+        }
+
+        /* رنگ‌های مخصوص هر شبکه اجتماعی */
+        .rubika {
+            /* 🎨 رنگ‌های گرادینت روبیکا را اینجا عوض کن */
+            --gradient-start: #a58bff;
+            --gradient-end: #7b4dff;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            box-shadow: 0 8px 20px rgba(91, 44, 255, 0.3);
+        }
+        .rubika:hover { box-shadow: 0 12px 25px rgba(91, 44, 255, 0.5); }
+
+         .rubino {
+            /* 🎨 رنگ‌های گرادینت روبیکا را اینجا عوض کن */
+            --gradient-start: #7079c7;
+            --gradient-end: #2d2ac5;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            box-shadow: 0 8px 20px rgba(91, 44, 255, 0.3);
+        }
+        .rubino:hover { box-shadow: 0 12px 25px rgba(91, 44, 255, 0.5); }
+
+
+        .aparat {
+            /* 🎨 رنگ‌های گرادینت آپارات را اینجا عوض کن */
+            --gradient-start: #fc9191;
+            --gradient-end: #ff3131;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            box-shadow: 0 8px 20px rgba(229, 57, 53, 0.3);
+        }
+        .aparat:hover { box-shadow: 0 12px 25px rgba(229, 57, 53, 0.5); }
+
+        .footer {
+            margin-top: 30px;
+            color: #a0aec0;
+            font-size: 12px;
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 22px; }
+            .avatar { width: 110px; height: 110px; }
+            .combo-profile,
+            .combo-stream {
+                font-size: 13px;
+                padding: 12px 8px;
+                gap: 5px;
+            }
+            .combo-profile i,
+            .combo-stream i {
+                font-size: 18px;
+            }
+            .live-badge {
+                font-size: 9px;
+                padding: 2px 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="./avatar.png" alt="آواتار" class="avatar" onerror="this.src='https://via.placeholder.com/130/764ba2/ffffff?text=M'">
+        
+        <h1>amin pixo</h1>
+        <p class="description">خوش آمدید به صفحه شبکه‌های اجتماعی amin pixo</p>
+
+        <div class="social-links">
+
+            <!-- 🎬 آپارات -->
+            <a href="https://www.aparat.com/amin_pixo" target="_blank" rel="noopener noreferrer" class="social-btn aparat">
+                <img src="./aparat.png" alt="آپارات">
+                <span>آپارات</span>
+
+            <!-- 🎲 روبیکا -->
+            <a href="https://rubika.ir/amin_pixo" target="_blank" rel="noopener noreferrer" class="social-btn rubika">
+                <img src="./rubika.png" alt="روبیکا">
+                <span>روبیکا</span>
+            </a>
+
+            <!-- 🎲 روبینو -->
+            <a href="https://rubika.ir/aminpixo" target="_blank" rel="noopener noreferrer" class="social-btn rubino">
+                <img src="./rubika.png" alt="روبیکا">
+                <span>روبینو(میتونید پیام بدید)</span>
+            
+            </a>
+
+        </div>
+
+        <div class="footer">
+            © amin pixo
+        </div>
+    </div>
+</body>
+</html>
